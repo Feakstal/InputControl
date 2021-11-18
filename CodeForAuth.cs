@@ -3,11 +3,11 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
-namespace BuildersApp_Novikov_3ISP11_13.Views
+namespace {ProjectName}
 {
     public partial class AuthWindow : Window
     {
-        {YourDataBaseEntities } Entities = new {YourDataBaseEntities()};
+        {YourDataBaseEntities} Entities = new {YourDataBaseEntities()};
         public static User authUser;
         private User user = new User();
 
