@@ -9,7 +9,6 @@ namespace {ProjectName}
     {
         {YourDataBaseEntities} Entities = new {YourDataBaseEntities()};
         public static User authUser;
-        private User user = new User();
 
         public AuthWindow()
         {
