@@ -26,12 +26,14 @@ namespace {ProjectName}
             }
             else
             {
-                if (tboxPassword.Text.Length == 0 && tboxLogin.Text.Length != 0)
+                if(tboxPassword.Text.Length == 0 && tboxLogin.Text.Length != 0)
                     MessageBox.Show("Вы не ввели пароль.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
-                else if (tboxPassword.Text.Length == 0 && tboxLogin.Text.Length == 0)
+                else if(tboxPassword.Text.Length == 0 && tboxLogin.Text.Length == 0)
                     MessageBox.Show("Вы не заполнили данные для авторизации.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
-                else if (tboxLogin.Text.Length != 0 && tboxPassword.Text.Length != 0)
-                    MessageBox.Show("Пользователь не найден", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
+                else if(tboxLogin.Text.Length != 0 && tboxPassword.Text.Length != 0)
+                    MessageBox.Show("В доступе отказано. Проверьте правильность введенных данных.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
+                else if(tboxLogin.Text.Length == 0 && tboxPassword.Text.Length != 0)
+                    MessageBox.Show("Вы не ввели логин.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
