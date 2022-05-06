@@ -1,4 +1,3 @@
-using {DataBaseName};
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -26,14 +25,22 @@ namespace {ProjectName}
             }
             else
             {
-                if(tboxPassword.Text.Length == 0 && tboxLogin.Text.Length != 0)
+                if (String.IsNullOrWhiteSpace(tboxPassword.Text) && !String.IsNullOrWhiteSpace(tboxLogin.Text))
+                {
                     MessageBox.Show("Вы не ввели пароль.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
-                else if(tboxPassword.Text.Length == 0 && tboxLogin.Text.Length == 0)
+                }
+                else if (String.IsNullOrWhiteSpace(tboxPassword.Text) && String.IsNullOrWhiteSpace(tboxLogin.Text))
+                {
                     MessageBox.Show("Вы не заполнили данные для авторизации.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
-                else if(tboxLogin.Text.Length != 0 && tboxPassword.Text.Length != 0)
+                }
+                else if (!String.IsNullOrWhiteSpace(tboxLogin.Text) && !String.IsNullOrWhiteSpace(tboxPassword.Text))
+                {
                     MessageBox.Show("В доступе отказано. Проверьте правильность введенных данных.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
-                else if(tboxLogin.Text.Length == 0 && tboxPassword.Text.Length != 0)
+                }
+                else if (String.IsNullOrWhiteSpace(tboxLogin.Text) && !String.IsNullOrWhiteSpace(tboxPassword.Text))
+                {
                     MessageBox.Show("Вы не ввели логин.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }
